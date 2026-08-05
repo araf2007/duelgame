@@ -2,9 +2,17 @@ import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
+
+// Serve the static files from the Vite build directory
+app.use(express.static(path.join(__dirname, 'dist')));
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -87,7 +95,7 @@ io.on('connection', (socket) => {
     });
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 httpServer.listen(PORT, () => {
     console.log(`Socket.IO Server running on port ${PORT}`);
 });
