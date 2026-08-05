@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rupert's Duel Club - Multiplayer</title>
+    <script type="module" crossorigin src="/assets/index-BAMEqD8D.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-G7a3nBze.css">
+  </head>
+  <body>
+    <div id="game-container"></div>
+    
+    <div id="ui-overlay">
+      <h1>Rupert's Duel Club</h1>
+      <div id="menu">
+        <button id="btn-singleplayer">Single Player</button>
+        <p>OR</p>
+        <button id="btn-create">Create Multiplayer</button>
+        <p>OR</p>
+        <input type="text" id="input-code" placeholder="ENTER CODE" maxlength="4" />
+        <button id="btn-join">Join Match</button>
+      </div>
+      <div id="lobby" style="display: none;">
+        <h2>Room Code: <span id="room-code">----</span></h2>
+        <p>Waiting for opponent...</p>
+      </div>
+      <div id="error-msg"></div>
+    </div>
+
+  </body>
+</html>
